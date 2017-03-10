@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+
+<head>
+    <title>Tasks To Complete</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- Including Bootstrap CSS library -->
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <!-- Including custom CSS file -->
+    <link rel="stylesheet" href="css/style.css">
+    <!-- Including AngularJS library file -->
+    <script src="lib/angular/angular.min.js"></script>
+    <!-- Including jQuery library -->
+    <script src="js/jQuery/jquery.min.js"></script>
+    <!-- Including Bootstrap JS file -->
+    <script src="js/bootstrap.min.js"></script>
+    <!-- Include Angular Route library -->
+    <script src="lib/angular/angular-route.min.js"></script>
+    <!-- For font awesome icon set -->
+    <link href="http://maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
+</head>
+
+<body>
+    <!-- MAIN CONTENT -->
+    <div ng-app="TaskManager">
+        <div class="container">
+            <div class="content" ng-controller="taskController">
+                <h1>Tasks To Complete</h1>
+                <form>
+
+                    <!-- Task description area -->
+                    <div class="inputContainer">
+                        <input type="text" id="description" class="taskName" placeholder="Task Description" ng-model="newTask">
+                        <label for="description">Description</label>
+                    </div>
+
+
+
+                    <!-- Due date area -->
+                    <div class="inputContainer half last right">
+                        <input type="date" id="dueDate" class="taskDate" ng-model="newTaskDate">
+                        <label for="dueDate">Due Date</label>
+                    </div>
+
+
+                    <!-- Category area -->
+                    <div class="inputContainer half last"> <i class="fa fa-caret-down selectArrow"></i>
+                        <select id="category" class="taskCategory" ng-model="newTaskCategory" ng-options="obj.name for obj in categories">
+                            <option class="disabled" value="">Choose a category</option>
+                        </select>
+                        <label for="category">Category</label>
+                    </div>
+
+
+                    <!-- Add task and Delete task button area -->
+                    <div class="row">
+                        <button class="taskAdd" ng-click="addNew()"><i class="fa fa-plus icon"></i>Add task</button>
+                        <button class="taskEdit" ng-click="editTask()"><i class="fa fa-pencil icon"></i>Edit Task</button>
+                        <button class="taskDelete" ng-click="deleteTask()"><i class="fa fa-trash-o icon"></i>Delete Tasks</button>
+                    </div>
+                </form>
+
+
+                <!-- Task list area -->
+                <ul class="taskList">
+                    <li class="taskItem" ng-repeat="taskItem in taskItem track by $index" ng-model="taskItem" ng-click="editTask(taskItem)">
+                        <input type="checkbox" class="taskCheckbox" ng-model="taskItem.complete" ng-change="save()">
+                        <span class="complete-{{taskItem.complete}}">{{taskItem.description}}</span>
+                        <span> <button ng-click="addNew">{{editMode ? 'Edit' : 'Add'}}</button></span>
+
+
+                        <span class="category-{{taskItem.category}}">{{taskItem.category}}</span> <strong class="taskDate complete-{{taskItem.complete}}"><i class="fa fa-calendar"></i>{{taskItem.date | date : 'mediumDate'}} </strong> </li>
+
+                </ul>
+                <!-- taskList -->
+
+            </div>
+            <!-- content -->
+
+        </div>
+        <!-- container -->
+    </div>
+
+
+    <!-- Including Application main controller -->
+    <script type="text/javascript" src="js/app.js"></script>
+</body>
+
+</html>

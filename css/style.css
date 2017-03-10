@@ -1,0 +1,396 @@
+*,
+*:before,
+*:after {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+
+/* app */
+
+html {
+    font-size: 100%;
+}
+
+body {
+    background: #420f43;
+    background-image: url("http://www.psdgraphics.com/file/2016/simple-geometric-design.png");
+    font-family: 'Open Sans', sans-serif;
+}
+
+
+/* CONATINER TO HOLD APP */
+
+.container {
+    width: 600px;
+    margin: 0 auto;
+    background: #f79740;
+    padding: 20px 0;
+    -webkit-box-shadow: 0 0 2px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 0 2px rgba(0, 0, 0, 0.2);
+}
+
+.row {
+    display: block;
+    padding: 10px;
+    text-align: center;
+    width: 100%;
+    clear: both;
+    overflow: hidden;
+}
+
+.half {
+    width: 50%;
+    float: left;
+}
+
+.content {
+    background: #fff;
+}
+
+
+/* logo */
+
+h1 {
+    font-family: 'Rokkitt', sans-serif;
+    color: #420f43;
+    text-align: center;
+    font-weight: 400;
+    margin: 0;
+}
+
+
+/* SELECT MENU STYLING */
+
+.taskCategory {
+    -webkit-appearance: none;
+    appearance: none;
+    cursor: pointer;
+    padding-left: 16.5px;
+    background: #fff;
+}
+
+.selectArrow {
+    position: absolute;
+    z-index: 10;
+    top: 35%;
+    right: 0;
+    margin-right: 20px;
+    color: #777;
+    pointer-events: none;
+}
+
+.taskCategory option {
+    background: #fff;
+    border: none;
+    outline: none;
+    padding: 0 100px;
+}
+
+
+/* TASK STYLING */
+
+.taskList {
+    list-style: none;
+    padding: 0 20px;
+}
+
+.taskItem {
+    border-top: 1px solid #e5e5e5;
+    padding: 15px 0;
+    color: #777;
+    font-weight: 600;
+    font-size: 14px;
+    letter-spacing: 0.5px;
+}
+
+.taskList .taskItem:nth-child(even) {
+    background: #fcfcfc;
+}
+
+.taskCheckbox {
+    margin-right: 1em;
+}
+
+.complete-true {
+    text-decoration: line-through;
+    color: #420f43;
+}
+
+.taskList .taskDate {
+    color: #95a5a6;
+    font-size: 10px;
+    font-weight: bold;
+    text-transform: uppercase;
+    display: block;
+    margin-left: 41px;
+}
+
+.fa-calendar {
+    margin-right: 10px;
+    font-size: 16px;
+}
+
+[class*='category-'] {
+    display: inline-block;
+    font-size: 10px;
+    background: #444;
+    vertical-align: middle;
+    color: #fff;
+    padding: 10px;
+    width: 75px;
+    text-align: center;
+    border-radius: 2px;
+    float: right;
+    font-weight: normal;
+    text-transform: uppercase;
+    margin-right: 20px;
+}
+
+.category- {
+    background: transparent;
+}
+
+.category-Personal {
+    background: #a37fe0;
+}
+
+.category-Work {
+    background: #7f59bf;
+}
+
+.category-School {
+    background: #6c47aa;
+}
+
+.category-Cleaning {
+    background: #46267c;
+}
+
+.category-Other {
+    background: #2b1256;
+}
+
+footer {
+    text-align: center;
+    font-size: 11px;
+    font-weight: 600;
+    text-transform: uppercase;
+    color: #777;
+}
+
+footer a {
+    color: #420f43;
+}
+
+
+/* TASK LIST CHECKBOXES */
+
+.taskCheckbox {
+    -webkit-appearance: none;
+    appearance: none;
+    -webkit-transition: all 0.3s;
+    transition: all 0.3s;
+    display: inline-block;
+    cursor: pointer;
+    width: 19px;
+    height: 19px;
+    vertical-align: middle;
+}
+
+.taskCheckbox:focus {
+    outline: none;
+}
+
+.taskCheckbox:before,
+.taskCheckbox:checked:before {
+    font-family: 'FontAwesome';
+    color: #444;
+    font-size: 20px;
+    -webkit-transition: all 0.3s;
+    transition: all 0.3s;
+}
+
+.taskCheckbox:before {
+    content: '\f096';
+}
+
+.taskCheckbox:checked:before {
+    content: '\f00d';
+    color: #420f43;
+}
+
+
+/*  INPUT STYLING */
+
+.inputContainer {
+    height: 60px;
+    border-top: 1px solid #e5e5e5;
+    position: relative;
+    overflow: hidden;
+}
+
+.inputContainer.last {
+    border-bottom: 1px solid #e5e5e5;
+    margin-bottom: 20px;
+}
+
+.inputContainer.half.last.right {
+    border-left: 1px solid #efefef;
+}
+
+input[type="date"],
+input[type="text"],
+select {
+    height: 100%;
+    width: 100%;
+    padding: 0 20px;
+    position: absolute;
+    top: 0;
+    vertical-align: middle;
+    display: inline-block;
+    border: none;
+    border-radius: none;
+    font-size: 13px;
+    color: #777;
+    margin: 0;
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+    -webkit-transition: background 0.3s;
+    transition: background 0.3s;
+}
+
+input[type="date"] {
+    cursor: pointer;
+}
+
+input[type="date"]:focus,
+input[type="text"]:focus,
+select:focus {
+    outline: none;
+    background: #ecf0f1;
+}
+
+::-webkit-input-placeholder {
+    color: lightgrey;
+    font-weight: normal;
+    -webkit-transition: all 0.3s;
+    transition: all 0.3s;
+}
+
+::-moz-placeholder {
+    color: lightgrey;
+    font-weight: normal;
+    transition: all 0.3s;
+}
+
+::-ms-input-placeholder {
+    color: lightgrey;
+    font-weight: normal;
+    transition: all 0.3s;
+}
+
+input:-moz-placeholder {
+    color: lightgrey;
+    font-weight: normal;
+    transition: all 0.3s;
+}
+
+input:focus::-webkit-input-placeholder {
+    color: #95a5a6;
+    font-weight: bold;
+}
+
+input:focus::-moz-input-placeholder {
+    color: #95a5a6;
+    font-weight: bold;
+}
+
+label {
+    padding: 5px 20px;
+    font-size: 11px;
+    font-weight: 600;
+    text-transform: uppercase;
+    color: #777;
+    display: block;
+    position: absolute;
+}
+
+button {
+    font-family: 'Open Sans', sans-serif;
+    background: transparent;
+    border-radius: 2px;
+    border: none;
+    outline: none;
+    height: 50px;
+    width: 150px;
+    font-size: 1em;
+    color: #fff;
+    cursor: pointer;
+    text-transform: uppercase;
+    position: relative;
+    -webkit-transition: all 0.3s;
+    transition: all 0.3s;
+}
+
+.icon {
+    position: absolute;
+    top: 30%;
+    left: 10px;
+    font-size: 20px;
+}
+
+.taskAdd {
+    background: #edb040;
+    padding-left: 15px;
+}
+
+.taskAdd:hover {
+    background: #ad60d1;
+}
+
+.taskEdit {
+    background: #e29126;
+    padding-left: 30px;
+}
+
+.taskEdit:hover {
+    background: #932ec1;
+}
+
+.taskDelete {
+    background: #c67509;
+    padding-left: 30px;
+}
+
+.taskDelete:hover {
+    background: #420f43;
+}
+
+
+/* MORE STYLING */
+
+.container {
+    margin-top: 10px;
+    font-family: arial;
+}
+
+input:focus {}
+
+input {
+    border: none;
+    background-color: transparent;
+}
+
+.container header {
+    padding-bottom: 20px;
+    border-bottom: 1px solid black;
+}
+
+ul,
+input,
+.container {
+    padding: 10px;
+}
